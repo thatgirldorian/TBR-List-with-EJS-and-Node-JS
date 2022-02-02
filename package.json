@@ -1,0 +1,15 @@
+{
+  "name": "tbr-list-with-ejs-and-node-js",
+  "version": "1.0.0",
+  "description": "This is a list app that lets me keep track of the books I want to read. I created it with EJS and Node JS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2"
+  }
+}
