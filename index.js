@@ -17,11 +17,44 @@ app.set('view engine', 'ejs')
 app.get('/', function (req, res) {
     //check if today is a weekend or not
     let today = new Date();
-    if (today.getDay() == 6 || today.getDay() == 0) {
-            res.send("Cheers to the weekend!");
-} else {
-    res.send("Uhm I have to work.")
-}
+    day = "";
+
+  //figure out which day of the week it is today
+    switch(today.getDay()) {
+        case 0:
+        day = "Sunday";
+        break;
+
+        case 1:
+        day = "Monday";
+        break;
+
+        case 2:
+        day = "Tuesday";
+        break;
+        
+        case 3:
+        day = "Wednesday";    
+        break;
+        
+        case 4:
+        day = "Thursday";    
+        break;
+        
+        case 5:
+        day = "Friday";
+        break;
+        
+        case 6:
+        day = "Saturday";
+        break;
+        
+        default:
+        console.log("Error: Unknown day: " + day);
+    }
+
+//render a variable called list found in the views file and pass the kind of day with the value of day
+res.render("list", {kindOfDay: day});
 })
 
 //render our static files for css and images
