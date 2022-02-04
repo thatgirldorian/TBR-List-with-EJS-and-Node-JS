@@ -11,8 +11,8 @@ const port = 3000
 
 //test rendering when the home route is accessed
 app.get('/', function (req, res) {
+    //check if today is a weekend or not
     let today = new Date();
-
     if (today.getDay() == 6 || today.getDay() == 0) {
             res.send("Cheers to the weekend!");
 } else {
