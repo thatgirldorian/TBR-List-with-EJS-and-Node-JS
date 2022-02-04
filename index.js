@@ -3,11 +3,15 @@
 const express = require('express')
 const https = require('https')
 const bodyParser = require('body-parser')
+const ejs = require('ejs')
 
 //create new express app
 const app = express()
 app.use(bodyParser.urlencoded({ extended: true}))
 const port = 3000
+
+//set up ejs templating
+app.set('view engine', 'ejs')
 
 //test rendering when the home route is accessed
 app.get('/', function (req, res) {
