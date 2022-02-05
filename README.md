@@ -15,7 +15,7 @@ Since I have never used animation sin my projects before, I had to learn how to 
 - Express JS
 
 <h3>Link to site:</h3>
-https://heuristic-bohr-f94b50.netlify.app/
+
 
 <h3>Screenshot:</h3>
 <img width="1124" alt="Screenshot 2022-02-05 at 9 33 48 PM" src="https://user-images.githubusercontent.com/40691059/152656380-90eb3e7b-37ef-4d38-86ca-e1fa0a13e7ba.png">
