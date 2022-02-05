@@ -4,6 +4,8 @@ const express = require('express')
 const https = require('https')
 const bodyParser = require('body-parser')
 const ejs = require('ejs')
+//require my local date module
+const date = require(__dirname + '/date.js')
 
 //create new express app
 const app = express()
@@ -18,21 +20,8 @@ app.set('view engine', 'ejs')
 
 //test rendering when the home route is accessed
 app.get('/', function (req, res) {
-    //figure out which day of the week, month and year it is today
-
-    let today = new Date();
-    let options = {
-        // weekday: "long",
-        // day: "numeric",
-        month: "long",
-        year: "numeric"
-        
-    }
-
-    let day = today.toLocaleDateString("en-US", options);
-
+    let day = date;
     
-
 //render a variable called list found in the views file and pass the kind of day with the value of day
 res.render("list", {kindOfDay: day, newBookItems: books});
 })
