@@ -4,26 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Debbie's TBR List</title>
 </head>
 <body>
 
-    <h1>Hey, welcome to BookList, your monthly TBR tracker</h1> 
-    <h3>Books to Read in <%= kindOfDay %></h3>
+    <div class="box" id="heading">
+        <h2>Hey, here's your monthly TBR tracker</h2> 
+    </div>
 
-    <!-- Add the list of books you need to read -->
-    <ul>
-        <!-- add a new item to existing list -->
-        <% for (var i=0; i<newBookItems.length; i++) { %>
-            <li><%= newBookItems[i] %></li> 
-            <% } %>
-    </ul>
-    
+    <div class="box" id="heading">
+        <h3>Books to Read in <%= kindOfDay %></h3>
+    </div>
+
+    <div class="box">
+            <!-- add a new item to existing list -->
+            <% for (let i=0; i<newBookItems.length; i++) { %>
+                <div class="item">
+                    <input type="checkbox">
+                    <p><%= newBookItems[i] %></p> 
+                </div>
+                <% } %>
+
     <!-- pass new books to the tracker -->
-    <form action="/" method="post">
-        <input type="text" name="newBook">
-        <button type="submit">Add a new book</button>
+    <form class="item" action="/" method="post">
+        <input type="text" name="newBook" placeholder="Add a new book to your list">
+        <button type="submit">+</button>
     </form>
+    </div>
+
+    
 
 
 
