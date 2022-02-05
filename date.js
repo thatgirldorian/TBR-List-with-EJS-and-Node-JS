@@ -3,8 +3,8 @@ module.exports = getDate();
 function getDate () {
     //figure out which day of the week, month and year it is today
 
-    let today = new Date();
-    let options = {
+    const today = new Date();
+    const options = {
         // weekday: "long",
         // day: "numeric",
         month: "long",
@@ -12,7 +12,7 @@ function getDate () {
         
     }
 
-    let day = today.toLocaleDateString("en-US", options);
+    const day = today.toLocaleDateString("en-US", options);
 
     return day;
 }
