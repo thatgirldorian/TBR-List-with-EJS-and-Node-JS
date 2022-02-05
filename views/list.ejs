@@ -8,8 +8,25 @@
 </head>
 <body>
 
-    <h3>It's a <%= kindOfDay %>!</h3>
-    <p>Why are you not at work?</p>
+    <h1>Hey, welcome to BookList, your monthly TBR tracker</h1> 
+    <h3>Books to Read in <%= kindOfDay %></h3>
+
+    <!-- Add the list of books you need to read -->
+    <ul>
+        <!-- add a new item to existing list -->
+        <% for (var i=0; i<newBookItems.length; i++) { %>
+            <li><%= newBookItems[i] %></li> 
+            <% } %>
+    </ul>
     
+    <!-- pass new books to the tracker -->
+    <form action="/" method="post">
+        <input type="text" name="newBook">
+        <button type="submit">Add a new book</button>
+    </form>
+
+
+
+
 </body>
 </html>

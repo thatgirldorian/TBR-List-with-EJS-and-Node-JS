@@ -10,51 +10,41 @@ const app = express()
 app.use(bodyParser.urlencoded({ extended: true}))
 const port = 3000
 
+//create an array to hold the new books we add
+let books = ['Finlay Donovan is Killing it by Elle Cosimano', 'Ultralearning by Scott H. Young', 'Certain Dark Things by Silvia Moreno-Garcia'];
+
 //set up ejs templating
 app.set('view engine', 'ejs')
 
 //test rendering when the home route is accessed
 app.get('/', function (req, res) {
-    //check if today is a weekend or not
+    //figure out which day of the week, month and year it is today
+
     let today = new Date();
-    day = "";
-
-  //figure out which day of the week it is today
-    switch(today.getDay()) {
-        case 0:
-        day = "Sunday";
-        break;
-
-        case 1:
-        day = "Monday";
-        break;
-
-        case 2:
-        day = "Tuesday";
-        break;
+    let options = {
+        // weekday: "long",
+        // day: "numeric",
+        month: "long",
+        year: "numeric"
         
-        case 3:
-        day = "Wednesday";    
-        break;
-        
-        case 4:
-        day = "Thursday";    
-        break;
-        
-        case 5:
-        day = "Friday";
-        break;
-        
-        case 6:
-        day = "Saturday";
-        break;
-        
-        default:
-        console.log("Error: Unknown day: " + day);
     }
 
+    let day = today.toLocaleDateString("en-US", options);
+
+    
+
 //render a variable called list found in the views file and pass the kind of day with the value of day
-res.render("list", {kindOfDay: day});
+res.render("list", {kindOfDay: day, newBookItems: books});
+})
+
+//handle the post request to the home route
+app.post('/', function(req, res) {
+    let book = req.body.newBook;
+
+    //push new book into books array
+    books.push(book);
+
+    res.redirect('/')
 })
 
 //render our static files for css and images
