@@ -10,7 +10,7 @@ const date = require(__dirname + '/date.js')
 //create new express app
 const app = express()
 app.use(bodyParser.urlencoded({ extended: true}))
-const port = 3000
+const port = process.env.PORT || 3000
 
 //create an array to hold the new books we add
 let books = ['Finlay Donovan is Killing it by Elle Cosimano', 'Ultralearning by Scott H. Young', 'Certain Dark Things by Silvia Moreno-Garcia'];
