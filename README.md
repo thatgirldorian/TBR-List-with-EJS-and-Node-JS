@@ -1,5 +1,8 @@
 # TBR List with EJS and Node JS
  This is a list app that lets me keep track of the books I want to read per month. I created it with EJS, Node JS and some pre-made CSS.
+ 
+ <h6>EDIT ON FEB 28, 2022</h6>
+ I learnt how to use MongoDB and added a database to this project.
 
 <h3>Issues faced and Solutions:</h3>
 I struggled with using a gradient for this project at first. But while looking at YouTube tutorials, I realised I could use animations instead.
